@@ -1,0 +1,1 @@
+# 💤 My lazyvim config
