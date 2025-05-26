@@ -19,3 +19,7 @@ vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', {
     expr = true,
     silent = true
 })
+-- Send deleted text to black hole register when pasting
+vim.keymap.set("x", "p", '"_dP', {
+    desc = "Paste without overwriting register"
+})

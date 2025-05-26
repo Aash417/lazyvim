@@ -46,3 +46,16 @@ require("lazy").setup({
         }
     }
 })
+
+-- In your LazyVim config (usually ~/.config/nvim/lua/config/lazy.lua)
+require("lazy").setup({
+    spec = {{
+        "LazyVim/LazyVim",
+        import = "lazyvim.plugins"
+    }, {
+        import = "lazyvim.plugins.extras.lsp.none-ls"
+    }, -- Add this line
+    {
+        import = "plugins"
+    }}
+})

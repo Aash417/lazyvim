@@ -189,24 +189,6 @@ return { -- tailwind
     end
 }, -- formater
 {
-    "nvimtools/none-ls.nvim",
-    config = function()
-        local null_ls = require("null-ls")
-        null_ls.setup({
-            sources = {null_ls.builtins.formatting.stylua, null_ls.builtins.formatting.prettier.with({
-                extra_args = {"--config-precedence", "prefer-file"} -- Ensures it uses the .prettierrc file
-            }), null_ls.builtins.diagnostics.erb_lint, null_ls.builtins.diagnostics.rubocop,
-                       null_ls.builtins.formatting.rubocop}
-        })
-
-        vim.keymap.set("n", "<leader>cf", function()
-            vim.lsp.buf.format({
-                async = true
-            })
-        end, {})
-    end
-}, -- Add Eslint and use it for formatting
-{
     "neovim/nvim-lspconfig",
     opts = {
         servers = {
